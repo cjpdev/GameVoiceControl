@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GameVoiceControl.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MouseClickSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="KeyPressSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="AutoJumpSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">700</Value>
+    </Setting>
+    <Setting Name="AutoDodgeSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1800</Value>
+    </Setting>
+    <Setting Name="WordConfidenceAdjust" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AutoFireSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="AutoBuildSpeed" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">170</Value>
+    </Setting>
+    <Setting Name="TopMost" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WordConfidenceAdjustMin" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="WordConfidenceAdjustMax" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">9.8</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
