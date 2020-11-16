@@ -1,7 +1,5 @@
 # GameVoiceControl
 
-Copyright 2020 Chay Palton
-
 Control games using your voice.
 
 **Games supported & configuration**
