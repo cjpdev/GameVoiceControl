@@ -4,7 +4,8 @@ Copyright 2020 Chay Palton
 
 Control games using your voice.
 
-***Games supported & configuration***
+**Games supported & configuration**
+
 Functionality has been add to handle use cases specific to "Fornite" and "StarCraft".
 Each game requires a specific XML configuration that must be loaded at the start.
 
@@ -12,7 +13,8 @@ Each game requires a specific XML configuration that must be loaded at the start
 
 It is possible modifiying these XNL file to create new configuration/actions.
 
-*** Application configuration: App.config*** 
+**Application configuration: App.config**
+
 MouseClickSpeed
 KeyPressSpeed
 AutoJumpSpeed
