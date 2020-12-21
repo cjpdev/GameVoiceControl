@@ -20,16 +20,37 @@
 	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 	OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+
+/**
+ * NOTTES:
+ * 
+ * As of 03/02/202 this software support Fornite with some support for Starcraft. 
+ * However, I don't really play these games. This software was mainly created
+ * as a bit of fun while in Covid-9 lockdown. Thus, why it is now open
+ * source.
+ * 
+ * Inital was a C++ implementation, but to save time ended up using C#.
+ * 
+ * Mainly tested with Fornite. It is possible to play game with minimal keyboard 
+ * or mouse input. However, there is a fraction of a second delay between issuing a
+ * voice command and the action being performed. This is result of the processing need to
+ * recongize the voice command, a faster computer should have better results.
+ * 
+ * Voice commands functioning with no peformance lose to the game.
+ *  
+ * Test Computer:
+ *    Intel i7, 8G RAM, SSD HD, Graphics NVidia 1050
+ *    Fornite running at high quality settings
+ *    resolution 3000x2000.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Speech.Recognition;
 using System.Text;
-using System.Threading;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace GameVoiceControl
@@ -54,8 +75,6 @@ namespace GameVoiceControl
         string autoDodgeAction = "";
 
         //UI Compatible timer.
-        // DispatcherTimer timerWindowsChecker = new DispatcherTimer();
-
         DispatchTimerGo timerWindowsChecker = new DispatchTimerGo();
         DispatchTimerGo timerDodge = new DispatchTimerGo();
         DispatchTimerGo timerJump = new DispatchTimerGo();
@@ -145,7 +164,6 @@ namespace GameVoiceControl
             labelAction.Text = "";
         }
 
-
         private void BuildSpeechRecognized()
         {
             int numberOfWords = 0;
@@ -162,8 +180,7 @@ namespace GameVoiceControl
             choices = new Choices();
 
             numberOfWords = GVCommand.commands.Count;
-
-            
+ 
             for (var n = 0; n < numberOfWords; n++)
             {
                 choices.Add(GVCommand.commands[n].word);
@@ -173,10 +190,6 @@ namespace GameVoiceControl
             grammarBuilder.Append(choices);
             grammer = new Grammar(grammarBuilder);
             grammer.Name = GVCommand.gvSetup.gameName;
-            
-         //  dictationGrammar.Name = "Junk";
-         //  dictationGrammar.SpeechRecognized += DictationGrammar_SpeechRecognized;s
-         //  recEngine.LoadGrammar(dictationGrammar);
          
             recEngine.LoadGrammar(grammer);
             
@@ -195,11 +208,6 @@ namespace GameVoiceControl
                 MessageBox.Show("Need mic input, none found.", "Speech Recognition");
                 System.Console.WriteLine(ex);
                 Application.Exit();
-               // if (result == System.Windows.Forms.DialogResult.Yes)
-               // {
-                    // Closes the parent form.
-               //     this.Close();
-               // }
             } 
         }
 
@@ -615,12 +623,9 @@ namespace GameVoiceControl
         {
             // timerWordOkay.IsEnabled = false;
             timerWordOkay.Stop();
-            // UI and timer are on diffent threads ???? why
-            //this.Invoke(new Action(() =>
-            //{
+
             labelAction.BackColor = Color.Green;
             labelAction.Text = "+" + labelAction.Text +"+";
-           // }));
         }
 
         private void TimerDodge_Elapsed(object sender, EventArgs e)
@@ -628,35 +633,31 @@ namespace GameVoiceControl
             if (stopKeyInput == true)
                 return;
 
-         //   this.Invoke(new Action(() =>
-         //   {
-                if (autoDodgeAction == "LEFT")
-                {
-                    System.Console.WriteLine("Auto dodge Right...");
-                    Action("MOVE RIGHT");
-                    autoDodgeAction = "RIGHT";
-                }
-                else
-                {
-                    System.Console.WriteLine("Auto dodge Right...");
-                    Action("MOVE LEFT");
-                    autoDodgeAction = "LEFT";
-                }
-          //  }));
+            if (autoDodgeAction == "LEFT")
+            {
+                System.Console.WriteLine("Auto dodge Right...");
+                Action("MOVE RIGHT");
+                autoDodgeAction = "RIGHT";
+            }
+            else
+            {
+                System.Console.WriteLine("Auto dodge Right...");
+                Action("MOVE LEFT");
+                autoDodgeAction = "LEFT";
+            }
         }
 
         private void TimerJump_Elapsed(object sender, EventArgs e)
         {
             if (stopKeyInput == true)
                 return;
-            
-         
-           // timerJump.Enabled = false;
-            // Add some ramdom time to stop the jump from getting looked in a spot when running.
-           // timerJump.Interval = Properties.Settings.Default.AutoJumpSpeed + rand.Next(4)*60;
-           // timerJump.Elapsed += TimerJump_Elapsed;
-            //  timerJump.AutoReset = false;
-            //timerJump.Enabled = true;
+                  
+            // timerJump.Enabled = false;
+            // Add some ramdom time to stop the jump from getting locked in a spot when running.
+            // timerJump.Interval = Properties.Settings.Default.AutoJumpSpeed + rand.Next(4)*60;
+            // timerJump.Elapsed += TimerJump_Elapsed;
+            // timerJump.AutoReset = false;
+            // timerJump.Enabled = true;
 
             ActionExec("JUMP");
         }
@@ -819,6 +820,12 @@ namespace GameVoiceControl
             return null;
         }
 
+        /// <summary>
+        /// TODO: This should be another windows Hook.
+        ///         But for now just pool.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckActiveWindowd(object sender, EventArgs e)
         {
             try
@@ -864,25 +871,23 @@ namespace GameVoiceControl
 #endif
         }
 
-
         private void btnConfigure_Click(object sender, EventArgs e)
         {
             var form = new FormConfigure();
             form.LoadData();
             form.ShowDialog(this);
-
         }
 
         private void FormMain_VisibleChanged(object sender, EventArgs e)
         {
-            //  GetActiveWindowTitle("")
+            //GetActiveWindowTitle("")
             //System.Console.WriteLine(e);
         }
 
         private void checkBoxTopmost_CheckedChanged(object sender, EventArgs e)
         {
-          //   this.TopMost = checkBoxTopmost.Checked;
-           // Properties.Settings.Default.SettingsKey["TopMost"] = this.TopMost;
+           //this.TopMost = checkBoxTopmost.Checked;
+           //Properties.Settings.Default.SettingsKey["TopMost"] = this.TopMost;
         }
     }
 }

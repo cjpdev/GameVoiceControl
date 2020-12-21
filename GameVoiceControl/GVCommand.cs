@@ -23,8 +23,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameVoiceControl
@@ -77,9 +75,19 @@ namespace GameVoiceControl
             return commands.Count();
         }
 
-        public static CommandItem NewItem(string action, string word, float confidence, List<string> key, List<string> keyBehaviour, string id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action">Title of action</param>
+        /// <param name="word">Actual voice command</param>
+        /// <param name="confidence">Minimal voice recognition command match.</param>
+        /// <param name="inputs">List of keyboard, mouse, or commmand inputs to generate for this action</param>
+        /// <param name="inputBehaviour">List of keyboard, mouse, or commmand states that matchs the keys</param>
+        /// <param name="groupId">Group this action belongs to.</param>
+        /// <returns></re
+        private static CommandItem CreateAction(string action, string word, float confidence, List<string> key, List<string> keyBehaviour, string id)
         {
-            CommandItem c = new CommandItem
+            return new CommandItem
             {
                 action = action,
                 word = word,
@@ -88,12 +96,13 @@ namespace GameVoiceControl
                 keyBehaviour = keyBehaviour,
                 groupid = id
             };
-            return c;
         }
 
-        //The opposing keys that must be release e.g LEFT - RIGHT key are mutually exclusive.
-        // this should be XML
-        public static Keyboard.DirectXKeyStrokes KeySwitchPairing(Keyboard.DirectXKeyStrokes  key)
+        // The opposing keys that must be release e.g LEFT - RIGHT key are mutually exclusive.
+        // TODO: This should be defined in the XML, as this is hardcoded to handle specific keys
+        //       which is wrong.
+        //       Should use the action name not the key input e.g. "MOVE RIGHT", "MOVE LEFT"
+        public static Keyboard.DirectXKeyStrokes KeySwitchPairing(Keyboard.DirectXKeyStrokes key)
         {
             Keyboard.DirectXKeyStrokes okey = Keyboard.DirectXKeyStrokes.DIK_NULL;
             string c = key.ToString();
@@ -137,129 +146,131 @@ namespace GameVoiceControl
             }
         }
         /// <summary>
-        /// StarDcraft
+        /// StarDcraft, 
         /// </summary>
-          private static void StarCraftTestData()
-          { 
+        private static void StarCraftTestData()
+        { 
         
-            //  commands.Add(NewItem("BUILD", new List<string>() { "B" }, new List<string>() { "PRESS" }, groupid_weapon));
-            commands.Add(NewItem("BUILD COMMAND CENTER", "Build command center", 7.5f, new List<string>() { "B", "C" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        //  commands.Add(NewItem("BUILD", new List<string>() { "B" }, new List<string>() { "PRESS" }, groupid_weapon));
+        commands.Add(CreateAction("BUILD COMMAND CENTER", "Build command center", 7.5f, new List<string>() { "B", "C" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
 
-            commands.Add(NewItem("BUILD REFINERY", "Build refinery", 7.5f, new List<string>() { "B", "R" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD SUPPLY"  , "Build supply", 5.5f,  new List<string>() { "B" , "S"}, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD BARACKS" , "Build barrracks", 5.5f, new List<string>() { "B", "B" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD BAY"     , "Build bay", 5.5f, new List<string>() { "B", "E" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD BUNKER"  , "Build bunker", 5.5f, new List<string>() { "B", "U" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD TURRET"  , "Build turret", 7.5f, new List<string>() { "B", "T" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD TOWER", "Build tower", 7.5f, new List<string>() { "B", "N" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD REFINERY", "Build refinery", 7.5f, new List<string>() { "B", "R" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD SUPPLY"  , "Build supply", 5.5f,  new List<string>() { "B" , "S"}, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD BARACKS" , "Build barrracks", 5.5f, new List<string>() { "B", "B" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD BAY"     , "Build bay", 5.5f, new List<string>() { "B", "E" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD BUNKER"  , "Build bunker", 5.5f, new List<string>() { "B", "U" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD TURRET"  , "Build turret", 7.5f, new List<string>() { "B", "T" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD TOWER", "Build tower", 7.5f, new List<string>() { "B", "N" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
 
-            commands.Add(NewItem("BUILD FACTORY", "Build factory", 7.5f, new List<string>() { "V", "F" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD FACTORY", "Build factory", 7.5f, new List<string>() { "V", "F" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD ARMORY", "Build armory", 6.5f, new List<string>() { "V", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("BUILD STAR PORT", "Build star port", 6.5f, new List<string>() { "V", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD FACTORY", "Build factory", 7.5f, new List<string>() { "V", "F" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD FACTORY", "Build factory", 7.5f, new List<string>() { "V", "F" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD ARMORY", "Build armory", 6.5f, new List<string>() { "V", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("BUILD STAR PORT", "Build star port", 6.5f, new List<string>() { "V", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
 
-            commands.Add(NewItem("REPAIR", "Repair", 7.5f, new List<string>() { "R"}, new List<string>() { "PRESS"}, groupid_action));
-            commands.Add(NewItem("SPRAY", "Spray", 7.5f, new List<string>() { "Y" }, new List<string>() { "PRESS" }, groupid_action));
-
-
-            commands.Add(NewItem("GROUP 1", "Group 1", 7.5f, new List<string>() { "1" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 2", "Group 2", 7.5f, new List<string>() { "2" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 3", "Group 3", 7.5f, new List<string>() { "3" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 4", "Group 4", 7.5f, new List<string>() { "4" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 5", "Group 5", 7.5f, new List<string>() { "5" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 6", "Group 6", 7.5f, new List<string>() { "6" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 7", "Group 7", 7.5f, new List<string>() { "7" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 8", "Group 8", 7.5f, new List<string>() { "8" }, new List<string>() { "PRESS" }, groupid_group));
-            commands.Add(NewItem("GROUP 9", "Group 9", 7.5f, new List<string>() { "9" }, new List<string>() { "PRESS" }, groupid_group));
-
-            commands.Add(NewItem("MAKE GROUP 1", "Make group 1", 8.5f, new List<string>() { "LCONTROL", "1" , "LCONTROL" }, new List<string>() { "DOWN" , "PRESS", "UP"}, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 2", "Make group 2", 8.5f, new List<string>() { "LCONTROL", "2", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 3", "Make group 3", 8.5f, new List<string>() { "LCONTROL", "3", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 4", "Make group 4", 8.5f, new List<string>() { "LCONTROL", "4", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 5", "Make group 5", 8.5f, new List<string>() { "LCONTROL", "5", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 6", "Make group 6", 8.5f, new List<string>() { "LCONTROL", "6", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 7", "Make group 7", 8.5f, new List<string>() { "LCONTROL", "7", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 8", "Make group 8", 8.5f, new List<string>() { "LCONTROL", "8", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
-            commands.Add(NewItem("MAKE GROUP 9", "Make group 9", 8.5f, new List<string>() { "LCONTROL", "9", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("REPAIR", "Repair", 7.5f, new List<string>() { "R"}, new List<string>() { "PRESS"}, groupid_action));
+        commands.Add(CreateAction("SPRAY", "Spray", 7.5f, new List<string>() { "Y" }, new List<string>() { "PRESS" }, groupid_action));
 
 
-            commands.Add(NewItem("CREATE MARINE", "marine", 6.5f, new List<string>() { "A" }, new List<string>() { "PRESS"}, groupid_build));
-            commands.Add(NewItem("CREATE REAPER", "reaper", 6.5f, new List<string>() { "S" }, new List<string>() { "PRESS" }, groupid_build));
+        commands.Add(CreateAction("GROUP 1", "Group 1", 7.5f, new List<string>() { "1" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 2", "Group 2", 7.5f, new List<string>() { "2" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 3", "Group 3", 7.5f, new List<string>() { "3" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 4", "Group 4", 7.5f, new List<string>() { "4" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 5", "Group 5", 7.5f, new List<string>() { "5" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 6", "Group 6", 7.5f, new List<string>() { "6" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 7", "Group 7", 7.5f, new List<string>() { "7" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 8", "Group 8", 7.5f, new List<string>() { "8" }, new List<string>() { "PRESS" }, groupid_group));
+        commands.Add(CreateAction("GROUP 9", "Group 9", 7.5f, new List<string>() { "9" }, new List<string>() { "PRESS" }, groupid_group));
 
-            commands.Add(NewItem("CREATE 2 MARINES", "2 marines", 6.5f, new List<string>() { "A" , "A" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("CREATE 2 REAPERS", "2 reapers", 6.5f, new List<string>() { "S", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("MAKE GROUP 1", "Make group 1", 8.5f, new List<string>() { "LCONTROL", "1" , "LCONTROL" }, new List<string>() { "DOWN" , "PRESS", "UP"}, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 2", "Make group 2", 8.5f, new List<string>() { "LCONTROL", "2", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 3", "Make group 3", 8.5f, new List<string>() { "LCONTROL", "3", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 4", "Make group 4", 8.5f, new List<string>() { "LCONTROL", "4", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 5", "Make group 5", 8.5f, new List<string>() { "LCONTROL", "5", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 6", "Make group 6", 8.5f, new List<string>() { "LCONTROL", "6", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 7", "Make group 7", 8.5f, new List<string>() { "LCONTROL", "7", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 8", "Make group 8", 8.5f, new List<string>() { "LCONTROL", "8", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
+        commands.Add(CreateAction("MAKE GROUP 9", "Make group 9", 8.5f, new List<string>() { "LCONTROL", "9", "LCONTROL" }, new List<string>() { "DOWN", "PRESS", "UP" }, groupid_group));
 
-            commands.Add(NewItem("CREATE 4 MARINES", "4 marines", 6.5f, new List<string>() { "A", "A", "A", "A" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("CREATE 4 REAPERS", "4 reapers", 6.5f, new List<string>() { "S", "S", "S", "S" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_build));
 
-            gvSetup = new GVSetup();
-            gvSetup.gameName = "STARCRAFT II";
-            gvSetup.commands = commands;
+        commands.Add(CreateAction("CREATE MARINE", "marine", 6.5f, new List<string>() { "A" }, new List<string>() { "PRESS"}, groupid_build));
+        commands.Add(CreateAction("CREATE REAPER", "reaper", 6.5f, new List<string>() { "S" }, new List<string>() { "PRESS" }, groupid_build));
 
-            BuildActionLookup();
-         }
+        commands.Add(CreateAction("CREATE 2 MARINES", "2 marines", 6.5f, new List<string>() { "A" , "A" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("CREATE 2 REAPERS", "2 reapers", 6.5f, new List<string>() { "S", "S" }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
 
-        /// Fornite
+        commands.Add(CreateAction("CREATE 4 MARINES", "4 marines", 6.5f, new List<string>() { "A", "A", "A", "A" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_build));
+        commands.Add(CreateAction("CREATE 4 REAPERS", "4 reapers", 6.5f, new List<string>() { "S", "S", "S", "S" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_build));
+
+        gvSetup = new GVSetup();
+        gvSetup.gameName = "STARCRAFT II";
+        gvSetup.commands = commands;
+
+        BuildActionLookup();
+        }
+
+        /// <summary>
+        /// Fornite, 
+        /// </summary>
         public static void ForniteTestData()
         {
-            commands.Add(NewItem("MOVE FORWARD", "RUN",  9.0f,   new List<string>() { "W" },             new List<string>() { "DOWN" }, groupid_navigation));
-            commands.Add(NewItem("MOVE LEFT",    "LEFT", 9.0f,   new List<string>() { "A" } ,            new List<string>() { "DOWN" }, groupid_navigation));
-            commands.Add(NewItem("MOVE BACKWARD","BACK", 9.8f,   new List<string>() { "S" },             new List<string>() { "DOWN" }, groupid_navigation));
-            commands.Add(NewItem("MOVE RIGHT",   "RIGHT",9.0f,   new List<string>() { "D" },             new List<string>() { "DOWN" }, groupid_navigation));
-            commands.Add(NewItem("JUMP",         "JUMP", 9.0f,   new List<string>() { "SPACE" },         new List<string>() { "PRESS" }, groupid_navigation));
-            commands.Add(NewItem("SPRINT",       "SPRINT", 9.0f, new List<string>() { "LSHIFT" },         new List<string>() { "PRESS" }, groupid_navigation));
-            commands.Add(NewItem("CROUCH",       "CROUCH", 9.0f, new List<string>() { "LCONTROL" },      new List<string>() { "PRESS" }, groupid_navigation));
+            commands.Add(CreateAction("MOVE FORWARD", "RUN",  9.0f,   new List<string>() { "W" },             new List<string>() { "DOWN" }, groupid_navigation));
+            commands.Add(CreateAction("MOVE LEFT",    "LEFT", 9.0f,   new List<string>() { "A" } ,            new List<string>() { "DOWN" }, groupid_navigation));
+            commands.Add(CreateAction("MOVE BACKWARD","BACK", 9.8f,   new List<string>() { "S" },             new List<string>() { "DOWN" }, groupid_navigation));
+            commands.Add(CreateAction("MOVE RIGHT",   "RIGHT",9.0f,   new List<string>() { "D" },             new List<string>() { "DOWN" }, groupid_navigation));
+            commands.Add(CreateAction("JUMP",         "JUMP", 9.0f,   new List<string>() { "SPACE" },         new List<string>() { "PRESS" }, groupid_navigation));
+            commands.Add(CreateAction("SPRINT",       "SPRINT", 9.0f, new List<string>() { "LSHIFT" },         new List<string>() { "PRESS" }, groupid_navigation));
+            commands.Add(CreateAction("CROUCH",       "CROUCH", 9.0f, new List<string>() { "LCONTROL" },      new List<string>() { "PRESS" }, groupid_navigation));
           
-            commands.Add(NewItem("FIRE", "FIRE", 9.0f,new List<string>() { "LEFTMOUSEBUTTON" }, new List<string>() { "PRESS" }, groupid_navigation));
+            commands.Add(CreateAction("FIRE", "FIRE", 9.0f,new List<string>() { "LEFTMOUSEBUTTON" }, new List<string>() { "PRESS" }, groupid_navigation));
 
-            commands.Add(NewItem("TARGET OF",   "TARGET ON", 9.0f, new List<string>() { "T" }, new List<string>() { "DOWN" }, groupid_combat));
-            commands.Add(NewItem("TARGET ON",   "TARGET OFF",9.0f, new List<string>() { "T" }, new List<string>() { "UP" }, groupid_combat));
-            commands.Add(NewItem("RELOAD",      "RELOAD",9.0f, new List<string>() { "R" }, new List<string>() { "PRESS" }, groupid_combat));
-            commands.Add(NewItem("USE", "E", 9.0f,new List<string>() { "E" }, new List<string>() { "DOWN" }, groupid_combat));
-            commands.Add(NewItem("HARVESTING TOOL", "AXE",9.0f, new List<string>() { "F" }, new List<string>() { "PRESS" }, groupid_combat));
+            commands.Add(CreateAction("TARGET OF",   "TARGET ON", 9.0f, new List<string>() { "T" }, new List<string>() { "DOWN" }, groupid_combat));
+            commands.Add(CreateAction("TARGET ON",   "TARGET OFF",9.0f, new List<string>() { "T" }, new List<string>() { "UP" }, groupid_combat));
+            commands.Add(CreateAction("RELOAD",      "RELOAD",9.0f, new List<string>() { "R" }, new List<string>() { "PRESS" }, groupid_combat));
+            commands.Add(CreateAction("USE", "E", 9.0f,new List<string>() { "E" }, new List<string>() { "DOWN" }, groupid_combat));
+            commands.Add(CreateAction("HARVESTING TOOL", "AXE",9.0f, new List<string>() { "F" }, new List<string>() { "PRESS" }, groupid_combat));
             
           
-            commands.Add(NewItem("WEAPON SLOT 1 TOOL", "WEAPON 1", 9.0f,new List<string>() { "1" }, new List<string>() { "PRESS" }, groupid_weapon));
-            commands.Add(NewItem("WEAPON SLOT 2 TOOL", "WEAPON 2", 9.0f,new List<string>() { "2" }, new List<string>() { "PRESS" }, groupid_weapon));
-            commands.Add(NewItem("WEAPON SLOT 3 TOOL", "WEAPON 3",9.0f, new List<string>() { "3" }, new List<string>() { "PRESS" }, groupid_weapon));
-            commands.Add(NewItem("WEAPON SLOT 4 TOOL", "WEAPON 4", 9.0f,new List<string>() { "4" }, new List<string>() { "PRESS" }, groupid_weapon));
-            commands.Add(NewItem("WEAPON SLOT 5 TOOL", "WEAPON 5", 9.0f,new List<string>() { "5" }, new List<string>() { "PRESS" }, groupid_weapon));
+            commands.Add(CreateAction("WEAPON SLOT 1 TOOL", "WEAPON 1", 9.0f,new List<string>() { "1" }, new List<string>() { "PRESS" }, groupid_weapon));
+            commands.Add(CreateAction("WEAPON SLOT 2 TOOL", "WEAPON 2", 9.0f,new List<string>() { "2" }, new List<string>() { "PRESS" }, groupid_weapon));
+            commands.Add(CreateAction("WEAPON SLOT 3 TOOL", "WEAPON 3",9.0f, new List<string>() { "3" }, new List<string>() { "PRESS" }, groupid_weapon));
+            commands.Add(CreateAction("WEAPON SLOT 4 TOOL", "WEAPON 4", 9.0f,new List<string>() { "4" }, new List<string>() { "PRESS" }, groupid_weapon));
+            commands.Add(CreateAction("WEAPON SLOT 5 TOOL", "WEAPON 5", 9.0f,new List<string>() { "5" }, new List<string>() { "PRESS" }, groupid_weapon));
 
-            commands.Add(NewItem("WALL","WALL", 9.0f,        new List<string>() { "Z", "LEFTMOUSEBUTTON", "LASTWEAPON"}, new List<string>() { "PRESS", "PRESS", "ACTION" }, groupid_build));
-            commands.Add(NewItem("FLOOR", "FLOOR",  9.0f,    new List<string>() { "X", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS", "PRESS", "ACTION" }, groupid_build));
-            commands.Add(NewItem("STAIRS", "STAIRS", 9.0f,   new List<string>() {  "C", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS",  "PRESS" ,"ACTION"}, groupid_build));
-            commands.Add(NewItem("ROOF", "ROOF",    9.0f,    new List<string>() { "V", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS", "PRESS", "ACTION"}, groupid_build));
-            commands.Add(NewItem("TRAP", "TRAP",   9.0f,     new List<string>() { "Y", "LEFTMOUSEBUTTON",  }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
-            commands.Add(NewItem("PLACE BUILDING", "BUILD",9.0f, new List<string>() { "LEFTMOUSEBUTTON" }, new List<string>() { "PRESS" }, groupid_build));
-            commands.Add(NewItem("TRAP EQUIP", "TRAP", 9.0f,new List<string>() { "F3", }, new List<string>() { "PRESS" }, groupid_special));
-            commands.Add(NewItem("EMOTE", "DANCE",9.0f, new List<string>() { "B", }, new List<string>() { "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WALL","WALL", 9.0f,        new List<string>() { "Z", "LEFTMOUSEBUTTON", "LASTWEAPON"}, new List<string>() { "PRESS", "PRESS", "ACTION" }, groupid_build));
+            commands.Add(CreateAction("FLOOR", "FLOOR",  9.0f,    new List<string>() { "X", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS", "PRESS", "ACTION" }, groupid_build));
+            commands.Add(CreateAction("STAIRS", "STAIRS", 9.0f,   new List<string>() {  "C", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS",  "PRESS" ,"ACTION"}, groupid_build));
+            commands.Add(CreateAction("ROOF", "ROOF",    9.0f,    new List<string>() { "V", "LEFTMOUSEBUTTON", "LASTWEAPON" }, new List<string>() { "PRESS", "PRESS", "ACTION"}, groupid_build));
+            commands.Add(CreateAction("TRAP", "TRAP",   9.0f,     new List<string>() { "Y", "LEFTMOUSEBUTTON",  }, new List<string>() { "PRESS", "PRESS" }, groupid_build));
+            commands.Add(CreateAction("PLACE BUILDING", "BUILD",9.0f, new List<string>() { "LEFTMOUSEBUTTON" }, new List<string>() { "PRESS" }, groupid_build));
+            commands.Add(CreateAction("TRAP EQUIP", "TRAP", 9.0f,new List<string>() { "F3", }, new List<string>() { "PRESS" }, groupid_special));
+            commands.Add(CreateAction("EMOTE", "DANCE",9.0f, new List<string>() { "B", }, new List<string>() { "PRESS" }, groupid_special));
 
             // commands.Add(NewItem("QICKBAR", "QICKBAR", new List<string>() { "Q" }, new List<string>() { "PRESS" }, groupid_build));
 
-            commands.Add(NewItem("WEAPON SLOT 1 DROP", "DROP 1", 9.0f,new List<string>() { "TAB","X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS" }, groupid_special));
-            commands.Add(NewItem("WEAPON SLOT 2 DROP", "DROP 2", 9.0f,new List<string>() { "TAB", "RIGHTARROW","X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
-            commands.Add(NewItem("WEAPON SLOT 3 DROP", "DROP 3", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW","X", "TAB" }, new List<string>() { "PRESS","PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
-            commands.Add(NewItem("WEAPON SLOT 4 DROP", "DROP 4", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW","RIGHTARROW", "X", "TAB" }, new List<string>() { "PRESS","PRESS", "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
-            commands.Add(NewItem("WEAPON SLOT 5 DROP", "DROP 5", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW", "RIGHTARROW","RIGHTARROW", "X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WEAPON SLOT 1 DROP", "DROP 1", 9.0f,new List<string>() { "TAB","X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WEAPON SLOT 2 DROP", "DROP 2", 9.0f,new List<string>() { "TAB", "RIGHTARROW","X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WEAPON SLOT 3 DROP", "DROP 3", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW","X", "TAB" }, new List<string>() { "PRESS","PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WEAPON SLOT 4 DROP", "DROP 4", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW","RIGHTARROW", "X", "TAB" }, new List<string>() { "PRESS","PRESS", "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
+            commands.Add(CreateAction("WEAPON SLOT 5 DROP", "DROP 5", 9.0f,new List<string>() { "TAB", "RIGHTARROW", "RIGHTARROW", "RIGHTARROW","RIGHTARROW", "X", "TAB" }, new List<string>() { "PRESS", "PRESS", "PRESS", "PRESS", "PRESS", "PRESS", "PRESS" }, groupid_special));
 
             // commands.Add(NewItem("WEAPON SLOT 2 DROP", "DROP 1",9.0, new List<string>() { "TAB", "X" }, new List<string>() { "PRESS" }, ,));
 
-            commands.Add(NewItem("STOP", "STOP",9.0f, new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("AUTO FIRE ON", "FIRE ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("AUTO FIRE OFF", "FIRE OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("STOP", "STOP",9.0f, new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO FIRE ON", "FIRE ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO FIRE OFF", "FIRE OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
 
-            commands.Add(NewItem("MAP", "MAP", 9.0f,new List<string>() { "M" }, new List<string>() { "PRESS" }, groupid_special));
+            commands.Add(CreateAction("MAP", "MAP", 9.0f,new List<string>() { "M" }, new List<string>() { "PRESS" }, groupid_special));
 
-            commands.Add(NewItem("EXIT BUS",     "DIVE",9.0f,new List<string>() { "SPACE", "W" },    new List<string>() { "PRESS", "DOWN" }, groupid_special));
-            commands.Add(NewItem("AUTO DODGE ON", "DODGE ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("AUTO DODGE OFF", "DODGE OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("GHOST ON", "GHOST ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("GHOST OFF", "GHOST OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("AUTO JUMP ON", "JUMP ON",9.0f, new List<string>() { "SPACE" },         new List<string>() { "DOWN"}, groupid_special));
-            commands.Add(NewItem("AUTO JUMP OFF", "JUMP OFF", 9.0f,new List<string>() { "SPACE" },       new List<string>() { "UP" }, groupid_special));
+            commands.Add(CreateAction("EXIT BUS",     "DIVE",9.0f,new List<string>() { "SPACE", "W" },    new List<string>() { "PRESS", "DOWN" }, groupid_special));
+            commands.Add(CreateAction("AUTO DODGE ON", "DODGE ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO DODGE OFF", "DODGE OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("GHOST ON", "GHOST ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("GHOST OFF", "GHOST OFF", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO JUMP ON", "JUMP ON",9.0f, new List<string>() { "SPACE" },         new List<string>() { "DOWN"}, groupid_special));
+            commands.Add(CreateAction("AUTO JUMP OFF", "JUMP OFF", 9.0f,new List<string>() { "SPACE" },       new List<string>() { "UP" }, groupid_special));
            
-            commands.Add(NewItem("AUTO BUILD ON", "BUILD ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
-            commands.Add(NewItem("AUTO BUILD OFF", "BUILD OFF", 9.0f, new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO BUILD ON", "BUILD ON", 9.0f,new List<string>(), new List<string>(), groupid_special));
+            commands.Add(CreateAction("AUTO BUILD OFF", "BUILD OFF", 9.0f, new List<string>(), new List<string>(), groupid_special));
 
             gvSetup = new GVSetup();
             gvSetup.gameName = "FORNITE";
@@ -312,6 +323,9 @@ namespace GameVoiceControl
             }
         }
 
+        /// <summary>
+        /// Mainly for testing
+        /// </summary>
         public static void SaveGVSetup()
         { 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -335,7 +349,6 @@ namespace GameVoiceControl
             }
 
             saveFileDialog.Dispose();
-           // BuildActionLookup();
         }
 
         public static void LoadGVSetup()

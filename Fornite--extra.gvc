@@ -1,0 +1,558 @@
+<?xml version="1.0"?>
+<GVSetup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <gameName>FORNITE</gameName>
+  <commands>
+    <CommandItem>
+      <action>MOVE FORWARD</action>
+      <word>RUN</word>
+      <confidence>9</confidence>
+      <key>
+        <string>W</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>MOVE LEFT</action>
+      <word>LEFT</word>
+      <confidence>9</confidence>
+      <key>
+        <string>A</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>MOVE BACKWARD</action>
+      <word>BACK</word>
+      <confidence>9.8</confidence>
+      <key>
+        <string>S</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>MOVE RIGHT</action>
+      <word>RIGHT</word>
+      <confidence>9</confidence>
+      <key>
+        <string>D</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>JUMP</action>
+      <word>JUMP</word>
+      <confidence>9</confidence>
+      <key>
+        <string>SPACE</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>SPRINT</action>
+      <word>SPRINT</word>
+      <confidence>9</confidence>
+      <key>
+        <string>LSHIFT</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>CROUCH</action>
+      <word>CROUCH</word>
+      <confidence>9</confidence>
+      <key>
+        <string>LCONTROL</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>FIRE</action>
+      <word>FIRE</word>
+      <confidence>9</confidence>
+      <key>
+        <string>LEFTMOUSEBUTTON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>NAVIGATION</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>TARGET OF</action>
+      <word>TARGET ON</word>
+      <confidence>9</confidence>
+      <key>
+        <string>T</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>COMBAT</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>TARGET ON</action>
+      <word>TARGET OFF</word>
+      <confidence>9</confidence>
+      <key>
+        <string>T</string>
+      </key>
+      <keyBehaviour>
+        <string>UP</string>
+      </keyBehaviour>
+      <groupid>COMBAT</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>RELOAD</action>
+      <word>RELOAD</word>
+      <confidence>9</confidence>
+      <key>
+        <string>R</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>COMBAT</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>USE</action>
+      <word>E</word>
+      <confidence>9</confidence>
+      <key>
+        <string>E</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>COMBAT</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>HARVESTING TOOL</action>
+      <word>AXE</word>
+      <confidence>9</confidence>
+      <key>
+        <string>F</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>COMBAT</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 1 TOOL</action>
+      <word>WEAPON 1</word>
+      <confidence>9</confidence>
+      <key>
+        <string>1</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>WEAPON</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 2 TOOL</action>
+      <word>WEAPON 2</word>
+      <confidence>9</confidence>
+      <key>
+        <string>2</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>WEAPON</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 3 TOOL</action>
+      <word>WEAPON 3</word>
+      <confidence>9</confidence>
+      <key>
+        <string>3</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>WEAPON</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 4 TOOL</action>
+      <word>WEAPON 4</word>
+      <confidence>9</confidence>
+      <key>
+        <string>4</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>WEAPON</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 5 TOOL</action>
+      <word>WEAPON 5</word>
+      <confidence>9</confidence>
+      <key>
+        <string>5</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>WEAPON</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WALL</action>
+      <word>WALL</word>
+      <confidence>9</confidence>
+      <key>
+        <string>Z</string>
+        <string>LEFTMOUSEBUTTON</string>
+        <string>LASTWEAPON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>ACTION</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>FLOOR</action>
+      <word>FLOOR</word>
+      <confidence>9</confidence>
+      <key>
+        <string>X</string>
+        <string>LEFTMOUSEBUTTON</string>
+        <string>LASTWEAPON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>ACTION</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>STAIRS</action>
+      <word>STAIRS</word>
+      <confidence>9</confidence>
+      <key>
+        <string>C</string>
+        <string>LEFTMOUSEBUTTON</string>
+        <string>LASTWEAPON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>ACTION</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>ROOF</action>
+      <word>ROOF</word>
+      <confidence>9</confidence>
+      <key>
+        <string>V</string>
+        <string>LEFTMOUSEBUTTON</string>
+        <string>LASTWEAPON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>ACTION</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>TRAP</action>
+      <word>TRAP</word>
+      <confidence>9</confidence>
+      <key>
+        <string>Y</string>
+        <string>LEFTMOUSEBUTTON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>PLACE BUILDING</action>
+      <word>BUILD</word>
+      <confidence>9</confidence>
+      <key>
+        <string>LEFTMOUSEBUTTON</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>BUILD</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>TRAP EQUIP</action>
+      <word>TRAP</word>
+      <confidence>9</confidence>
+      <key>
+        <string>F3</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>EMOTE</action>
+      <word>DANCE</word>
+      <confidence>9</confidence>
+      <key>
+        <string>B</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 1 DROP</action>
+      <word>DROP 1</word>
+      <confidence>9</confidence>
+      <key>
+        <string>TAB</string>
+        <string>X</string>
+        <string>TAB</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 2 DROP</action>
+      <word>DROP 2</word>
+      <confidence>9</confidence>
+      <key>
+        <string>TAB</string>
+        <string>RIGHTARROW</string>
+        <string>X</string>
+        <string>TAB</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 3 DROP</action>
+      <word>DROP 3</word>
+      <confidence>9</confidence>
+      <key>
+        <string>TAB</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>X</string>
+        <string>TAB</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 4 DROP</action>
+      <word>DROP 4</word>
+      <confidence>9</confidence>
+      <key>
+        <string>TAB</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>X</string>
+        <string>TAB</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>WEAPON SLOT 5 DROP</action>
+      <word>DROP 5</word>
+      <confidence>9</confidence>
+      <key>
+        <string>TAB</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>RIGHTARROW</string>
+        <string>X</string>
+        <string>TAB</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>STOP</action>
+      <word>STOP</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO FIRE ON</action>
+      <word>FIRE ON</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO FIRE OFF</action>
+      <word>FIRE OFF</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>MAP</action>
+      <word>MAP</word>
+      <confidence>9</confidence>
+      <key>
+        <string>M</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>EXIT BUS</action>
+      <word>DIVE</word>
+      <confidence>9</confidence>
+      <key>
+        <string>SPACE</string>
+        <string>W</string>
+      </key>
+      <keyBehaviour>
+        <string>PRESS</string>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO DODGE ON</action>
+      <word>DODGE ON</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO DODGE OFF</action>
+      <word>DODGE OFF</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>GHOST ON</action>
+      <word>GHOST ON</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>GHOST OFF</action>
+      <word>GHOST OFF</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO JUMP ON</action>
+      <word>JUMP ON</word>
+      <confidence>9</confidence>
+      <key>
+        <string>SPACE</string>
+      </key>
+      <keyBehaviour>
+        <string>DOWN</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO JUMP OFF</action>
+      <word>JUMP OFF</word>
+      <confidence>9</confidence>
+      <key>
+        <string>SPACE</string>
+      </key>
+      <keyBehaviour>
+        <string>UP</string>
+      </keyBehaviour>
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO BUILD ON</action>
+      <word>BUILD ON</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+    <CommandItem>
+      <action>AUTO BUILD OFF</action>
+      <word>BUILD OFF</word>
+      <confidence>9</confidence>
+      <key />
+      <keyBehaviour />
+      <groupid>SPECIAL</groupid>
+    </CommandItem>
+  </commands>
+</GVSetup>

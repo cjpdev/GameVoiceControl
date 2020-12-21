@@ -43,6 +43,7 @@ namespace GameVoiceControl
 
         public void Start()
         {
+            // Call on start.
             if(eventHandler != null)
             {
                 eventHandler.Invoke(dispatcherTimer, new EventArgs());

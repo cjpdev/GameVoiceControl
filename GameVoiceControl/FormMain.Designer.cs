@@ -38,12 +38,12 @@
             this.BtnConfigure.BackColor = System.Drawing.Color.Navy;
             this.BtnConfigure.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfigure.ForeColor = System.Drawing.Color.White;
-            this.BtnConfigure.Location = new System.Drawing.Point(14, 14);
-            this.BtnConfigure.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtnConfigure.Location = new System.Drawing.Point(12, 12);
+            this.BtnConfigure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnConfigure.Name = "BtnConfigure";
-            this.BtnConfigure.Size = new System.Drawing.Size(264, 85);
+            this.BtnConfigure.Size = new System.Drawing.Size(226, 73);
             this.BtnConfigure.TabIndex = 0;
-            this.BtnConfigure.Text = "Configure";
+            this.BtnConfigure.Text = "Xml";
             this.BtnConfigure.UseVisualStyleBackColor = false;
             this.BtnConfigure.Click += new System.EventHandler(this.btnConfigure_Click);
             // 
@@ -53,10 +53,10 @@
             this.labelAction.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAction.Location = new System.Drawing.Point(303, 20);
-            this.labelAction.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelAction.Location = new System.Drawing.Point(260, 17);
+            this.labelAction.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelAction.Name = "labelAction";
-            this.labelAction.Size = new System.Drawing.Size(214, 72);
+            this.labelAction.Size = new System.Drawing.Size(184, 62);
             this.labelAction.TabIndex = 2;
             this.labelAction.Text = "n/a";
             this.labelAction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,7 +64,7 @@
             // checkBoxTopmost
             // 
             this.checkBoxTopmost.AutoSize = true;
-            this.checkBoxTopmost.Location = new System.Drawing.Point(565, 41);
+            this.checkBoxTopmost.Location = new System.Drawing.Point(484, 35);
             this.checkBoxTopmost.Name = "checkBoxTopmost";
             this.checkBoxTopmost.Size = new System.Drawing.Size(28, 27);
             this.checkBoxTopmost.TabIndex = 3;
@@ -73,23 +73,23 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(190)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(656, 116);
+            this.ClientSize = new System.Drawing.Size(562, 100);
             this.Controls.Add(this.checkBoxTopmost);
             this.Controls.Add(this.labelAction);
             this.Controls.Add(this.BtnConfigure);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Opacity = 0.6D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "GVC BY CHAY";
+            this.Text = "(GVC) Game Voice Control";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);

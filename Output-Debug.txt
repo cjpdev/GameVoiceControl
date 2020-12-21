@@ -1,0 +1,72 @@
+﻿'GameVoiceControl.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'D:\Projects\VisualStudio\GameVoiceControl\GameVoiceControl\bin\Debug\GameVoiceControl.exe'. Symbols loaded.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Speech\v4.0_4.0.0.0__31bf3856ad364e35\System.Speech.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll'. 
+'GameVoiceControl.exe' (CLR v4.0.30319: GameVoiceControl.exe): Loaded 'Microsoft.GeneratedCode'. 
+Debug version
+GameVoiceControl.exe Information: 0 : SAPI does not implement phonetic alphabet selection.
+Active windows [(GVC)GAMEVOICECONTROL]
+Active windows [(GVC)GAMEVOICECONTROL]
+Active windows [(GVC)GAMEVOICECONTROL]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GVC:XML]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+Active windows [GAMEVOICECONTROL(RUNNING)-MICROSOFTVISUALSTUDIO]
+The program '[5940] GameVoiceControl.exe' has exited with code -1 (0xffffffff).
