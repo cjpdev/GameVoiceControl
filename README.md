@@ -28,7 +28,7 @@ WordConfidenceAdjustMax
 ***Voice recognition***
 
 Headphones and mic are required, but application will not start if no mic is detected.
-The Microsoft voice recognistion seens to be very susceptible to backgournd noise, so headphones should be used to reduce ingame sounds effecting recognition accuracy.
+The Microsoft voice recognistion seems to be very susceptible to backgournd noise, so headphones should be used to reduce ingame sounds effecting recognition accuracy.
 Also any other background talking will effect recognition accuracy. You can try use the Microsoft voice recognition training setup to improve detection accuracy. (This can be found in the Window control panel).
 
 
