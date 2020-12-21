@@ -25,7 +25,7 @@
  * NOTTES:
  * 
  * As of 03/02/202 this software support Fornite with some support for Starcraft. 
- * However, I don't really play these games. This software was mainly created
+ * However, I don't really play these games much, and this software was mainly created
  * as a bit of fun while in Covid-9 lockdown. Thus, why it is now open
  * source.
  * 
