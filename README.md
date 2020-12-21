@@ -9,6 +9,8 @@ Each game requires a specific XML configuration that must be loaded at the start
 
 ```Fornite-extra.gvc``` or ```StarCarft-extra.gvc```
 
+https://github.com/cjpdev/GameVoiceControl/blob/master/GameVoiceControl/Configuration/Fornite-extra.gvc
+
 It is possible modifiying these XNL file to create new configuration/actions.
 
 **Application configuration: App.config**
