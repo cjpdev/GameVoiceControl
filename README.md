@@ -2,7 +2,7 @@
 
 Control games using your voice.
 
-  As of 03/02/2020 this software support Fornite with some support for Starcraft. 
+  As of 03/02/2020 this software supports Fornite with some support for Starcraft. 
   This software was mainly created as a bit of fun while in Covid-19 lockdown. 
   Thus, why it is now open source. 
   However, as I don't really play these games much I will not be maintaining this code.
@@ -10,12 +10,12 @@ Control games using your voice.
 **Is it safe to use?**
 
 It is safe to use this software with the above games, as this is not a hack it does not interfere with
-any part of these games. It only onverts voice command into key/mouse inputs and behaviors that
-are relevent(useful) in the context of the running games/software. It interacts directly with Windows OS
+any part of these games code; EXE, DLL or in memory execution. It only converts voice command into key/mouse inputs and behaviors that
+are relevent(useful) in the context of the running games. It interacts directly with Windows OS
 not the game.
 
   NO WITHOUT WARRANTY OF ANY KIND, and I ACCEPT NO LIABLITY OF ANY KIND.
-  **So use a your on risk**, 
+  **So use at your on risk**, 
 
 Lower level windows API is used to handle keyboard, DirectX and mouse input. Voice control is
 handled by the Microsoft voice recognition API.
@@ -31,20 +31,22 @@ Each game requires a specific XML configuration that must be loaded at the start
 
 https://github.com/cjpdev/GameVoiceControl/blob/master/GameVoiceControl/Configuration/Fornite-extra.gvc
 
-It is possible modifiying these XNL file to create new configuration/actions.
+It is possible modifiying these XML file to create new configuration/actions.
 
 **Application configuration: App.config**
 
-MouseClickSpeed
-KeyPressSpeed
-AutoJumpSpeed
-AutoDodgeSpeed
+MouseClickSpeed,
+KeyPressSpeed,
+AutoJumpSpeed,
+AutoDodgeSpeed,
 WordConfidenceAdjust: raise or lower the word confidence detection of all setting in the actual game configuration file.
-AutoFireSpeed
-AutoBuildSpeed
-TopMost
-WordConfidenceAdjustMin
-WordConfidenceAdjustMax
+AutoFireSpeed,
+AutoBuildSpeed,
+TopMost,
+WordConfidenceAdjustMin,
+WordConfidenceAdjustMax,
+
+https://github.com/cjpdev/GameVoiceControl/blob/master/GameVoiceControl/App.config
 
 
 ***Voice recognition***
